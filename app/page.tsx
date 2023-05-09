@@ -1,54 +1,18 @@
-import React from 'react'
-import MyButton from './components/MyButton'
+import Challange from "./components/Challange";
+import MyButton from "./components/MyButton";
 
-export default function page() {
+export default function Page() {
   return (
     <>
-      <main className="space-y-20 divide-y-2">
-        <Day01 />
-        <Day02 />
+      <main className="space-y-16">
+        <Challange Headline="Your First Component" Supporting="Components are one of the core concepts of React. They are the foundation upon which you build user interfaces (UI), which makes them the perfect place to start your React journey!">
+          <MyButton variant="primary">Hello World</MyButton>
+        </Challange>
+        <Challange Headline="Importing and Exporting Components" Supporting="The magic of components lies in their reusability: you can create components that are composed of other components. But as you nest more and more components, it often makes sense to start splitting them into different files. This lets you keep your files easy to scan and reuse components in more places.!">
+        </Challange>
+        <Challange Headline="Writing Markup with JSX" Supporting="JSX is a syntax extension for JavaScript that lets you write HTML-like markup inside a JavaScript file. Although there are other ways to write components, most React developers prefer the conciseness of JSX, and most codebases use it.">
+        </Challange>
       </main>
     </>
-  )
-}
-
-function Day01() {
-  return (
-    <section className='p-4 space-y-2' aria-label='day-02--react-component'>
-      <h1 className="text-2xl">Day 1: React Component</h1>
-      <p className="text-base">Create a functional component that with custom parameters</p>
-      <MyButton>Button Component</MyButton>
-    </section>
-  )
-}
-function Day02() {
-  const Item = ({ name, isPacked }: any) => {
-    if (isPacked) {
-      return <li className="item">{name} ✔</li>;
-    }
-    return <li className="item">{name}</li>;
-  }
-  return (
-    <section className="p-4 space-y-4" aria-label='day-02--conditional-rendering'>
-      <div className="space-y-2">
-        <h1 className="text-2xl">Day 2: Conditional Rendering</h1>
-        <p className="text-base">Your components will often need to display different things depending on different conditions. In React, you can conditionally render JSX using JavaScript syntax like if statements, &&, and ? : operators</p>
-      </div>
-      <ul className="p-4 bg-gray-100">
-        <Item
-          isPacked={true}
-          name="Space suit"
-        />
-        <Item
-          isPacked={true}
-          name="Helmet with a golden leaf"
-        />
-        <Item
-          isPacked={false}
-          name="Photo of Tam"
-        />
-        
-      </ul>
-    </section>
   )
 }
